@@ -1,11 +1,20 @@
 file="/home/${username}/.config/config.sh"
+
+favorites=$(echo ${FAVORITEAPPS} | sed "s/__/ /g")
+favoritesstring="["
+for fav in ${favorites}; do
+  favoritesstring+="'${fav}', "
+done
+favoritesstring="${favoritesstring::-2}]"
+
 cat >> ${file} << EOF
 gsettings set org.gnome.desktop.wm.preferences button-layout "appmenu:minimize,maximize,close"
 gsettings set org.gnome.desktop.interface enable-animations false
 #gsettings set org.gnome.desktop.background picture-uri 'file:///usr/share/backgrounds/gnome/adwaita-timed.xml'
 
 # Favorite Apps
-gsettings set org.gnome.shell favorite-apps "${FAVORITEAPPS}]"
+#gsettings set org.gnome.shell favorite-apps "${favoritesstring}"
+gsettings set org.gnome.shell favorite-apps "['firefox.desktop', 'nautilus.desktop', 'gnome-terminal.desktop']"
 
 # GEDIT
 gsettings set org.gnome.gedit.preferences.editor scheme 'oblivion'

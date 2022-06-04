@@ -2,7 +2,7 @@ source "vagrant" "image" {
   communicator = "ssh"
   source_path = "generic/oracle8"
   provider = "virtualbox"
-  add_force = true
+  add_force = false
 }
 
 build {
@@ -10,16 +10,16 @@ build {
   
   provisioner "shell" {
     execute_command = "sudo sh -c '{{ .Vars }} {{ .Path }}'"
+    env_var_format  = "%s='%s' "
     environment_vars = [
       "username=vagrant",
       "TIMEZONE=America/New_York",
-      "SYSTEMDTARGET=graphical.target",
-      "DNFGROUPS='gnome-desktop fonts'",
+      "DNFGROUPS=gnome-desktop__fonts",
       "ENABLEDSERVICES=gdm",
-      "FAVORITEAPPS=''firefox.desktop', 'nautilus.desktop', 'gnome-terminal.desktop''",
-      "PACKAGES='xdg-utils chromium firefox gnome-shell-extension-dash-to-panel gnome-backgrounds neofetch virt-viewer podman-docker git'",
-      "RPMURLS='https://f5vpn.geneseo.edu/public/download/linux_f5vpn.x86_64.rpm https://az764295.vo.msecnd.net/stable/c3511e6c69bb39013c4a4b7b9566ec1ca73fc4d5/code-1.67.2-1652812909.el7.x86_64.rpm'",
-
+      "SYSTEMDTARGET=graphical.target",
+      "PACKAGES=xdg-utils__chromium__firefox__gnome-shell-extension-dash-to-panel__gnome-backgrounds__neofetch__virt-viewer__podman-docker__git",
+      "RPMURLS=https://f5vpn.geneseo.edu/public/download/linux_f5vpn.x86_64.rpm__https://az764295.vo.msecnd.net/stable/c3511e6c69bb39013c4a4b7b9566ec1ca73fc4d5/code-1.67.2-1652812909.el7.x86_64.rpm",
+      "FAVORITEAPPS=firefox.desktop__nautilus.desktop__gnome-terminal.desktop"
     ]
     scripts = [
       "./el8/common/base.sh",
