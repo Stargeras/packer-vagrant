@@ -2,7 +2,7 @@ source "vagrant" "image" {
   communicator = "ssh"
   source_path = "debian/bullseye64"
   provider = "virtualbox"
-  add_force = false
+  add_force = true
 }
 
 build {
@@ -29,6 +29,7 @@ build {
       "./debian/common/vbox-guest-additions.sh",
       "./debian/common/config-gnome/general.sh",
       "./debian/common/config-gnome/dash-to-panel.sh",
+      "./debian/common/finalize.sh",
     ]
   }
 }

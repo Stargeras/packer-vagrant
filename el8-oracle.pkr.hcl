@@ -2,7 +2,7 @@ source "vagrant" "image" {
   communicator = "ssh"
   source_path = "generic/oracle8"
   provider = "virtualbox"
-  add_force = false
+  add_force = true
 }
 
 build {
