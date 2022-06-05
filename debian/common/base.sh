@@ -6,18 +6,23 @@ firmware-realtek firmware-misc-nonfree firmware-libertas firmware-iwlwifi firmwa
 cat > /etc/apt/sources.list << EOF
 deb http://deb.debian.org/debian/ ${CODENAME} main contrib non-free
 deb-src http://deb.debian.org/debian/ ${CODENAME} main contrib non-free
+
 deb http://deb.debian.org/debian/ ${CODENAME}-updates main contrib non-free
 deb-src http://deb.debian.org/debian/ ${CODENAME}-updates main contrib non-free
+
 EOF
+
+if [[ ${USESECURITYREPO} == "true" ]]; then
+  cat >> /etc/apt/sources.list << EOF
+deb http://deb.debian.org/debian-security/ ${CODENAME}-security main contrib non-free
+deb-src http://deb.debian.org/debian-security/ ${CODENAME}-security main contrib non-free
+EOF
+fi
+
 apt update
 apt install -y ${packages}
 
-#apt update
-#apt upgrade -y
-
 systemctl disable unattended-upgrades
-
-mkdir ${BUILDDIR}
 
 # SET TIMEZONE
 ln -sf /usr/share/zoneinfo/${TIMEZONE} /etc/localtime
@@ -33,15 +38,15 @@ alias ytdm='youtube-dl --extract-audio --audio-format mp3'
 alias ytdv='youtube-dl -f bestvideo+bestaudio'
 EOF
 cp /etc/skel/.bashrc /root/
-echo debian-$(cat /etc/apt/sources.list | head -1 | awk '{print$3}') > /etc/hostname
 
-useradd -m -g users -s /bin/bash ${username}
-usermod -aG ${username} sudo,netdev,disk
+usermod -aG sudo,netdev,disk ${username}
+echo "${username}:${username}" |chpasswd
+echo 'root:root' | chpasswd
+
 cat >> /etc/sudoers << EOF
 %sudo ALL=(ALL) NOPASSWD: ALL
 EOF
-echo "${username}:${username}" |chpasswd
-echo 'root:root' | chpasswd
+
 #add home dirs
 su ${username} -c 'xdg-user-dirs-update'
 

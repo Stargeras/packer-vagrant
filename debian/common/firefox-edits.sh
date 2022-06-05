@@ -1,6 +1,4 @@
-#!/bin/bash
-
-file="/etc/firefox/pref/firefox.js"
+file="/etc/firefox-esr/firefox-esr.js"
 
 cat > ${file} << EOF
 pref("browser.tabs.drawInTitlebar", true);
