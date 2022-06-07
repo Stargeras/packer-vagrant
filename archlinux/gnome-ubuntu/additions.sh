@@ -26,7 +26,6 @@ dconf write /org/gnome/terminal/legacy/profiles:/:b1dcc9dd-5262-4d8d-a863-c897e6
 dconf write /org/gnome/terminal/legacy/profiles:/:b1dcc9dd-5262-4d8d-a863-c897e6d979b9/foreground-color "'rgb(255,255,255)'"
 
 # Extensions
-gsettings set org.gnome.shell favorite-apps "['chromium.desktop', 'nautilus.desktop', 'gnome-terminal.desktop']"
 gsettings set org.gnome.shell enabled-extensions "['dash-to-dock@micxgx.gmail.com']"
 gsettings set org.gnome.shell.extensions.dash-to-dock custom-theme-shrink 'true'
 gsettings set org.gnome.shell.extensions.dash-to-dock dock-fixed 'true'

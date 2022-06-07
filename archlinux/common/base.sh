@@ -16,12 +16,6 @@ done
 # FIX PACMAN SPACE ERROR
 sed -i '/CheckSpace/d' /etc/pacman.conf
 
-# DON'T UPDATE KERNEL
-cat >> /etc/pacman.conf << EOF
-[options]
-IgnorePkg  = linux
-EOF
-
 # UPDATE PACKAGES
 pacman -Syu --noconfirm
 
@@ -97,4 +91,7 @@ chown ${username}:users /home/${username}/.vimrc
 #systemctl set-default graphical.target
 
 # REMOVE ANNOYING BANNER
-mv /etc/motd /etc/motd.bak
+if [[ -f /etc/motd ]]; then
+  mv /etc/motd /etc/motd.bak
+fi
+
