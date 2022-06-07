@@ -1,0 +1,1 @@
+echo "yes" >> /home/${username}/.config/gnome-initial-setup-done
