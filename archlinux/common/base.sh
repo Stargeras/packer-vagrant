@@ -20,8 +20,8 @@ sed -i '/CheckSpace/d' /etc/pacman.conf
 pacman -Syu --noconfirm
 
 # USE REFLECTOR TO RATE MIRRORS
-pacman -S reflector --noconfirm
-reflector --verbose --country 'United States' --sort rate --save /etc/pacman.d/mirrorlist
+#pacman -S reflector --noconfirm
+#reflector --verbose --country 'United States' --sort rate --save /etc/pacman.d/mirrorlist
 
 # INSTALL PACKAGES
 #pacman -Rsn clonezilla lftp nmap openconnect --noconfirm
