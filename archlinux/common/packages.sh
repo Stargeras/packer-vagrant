@@ -8,6 +8,11 @@ if pacman -Q virtualbox-guest-utils-nox > /dev/null 2>&1; then
   pacman -Rsn virtualbox-guest-utils-nox --noconfirm
 fi
 
+# If appcenter is in wanted, remove file to make possible
+if [[ $(echo ${aurpackages} | grep appcenter) ]]; then
+  rm -f /etc/io.elementary.appcenter/appcenter.hiddenapps
+fi
+
 pacman -S ${packages} --noconfirm
 
 # AUR Pakages
