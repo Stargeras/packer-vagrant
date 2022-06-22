@@ -1,11 +1,17 @@
+packer {
+  required_plugins {
+    vagrant = {
+      version = "~> 1.0" # effectively 1.0.2
+      source  = "github.com/hashicorp/vagrant"
+    }
+  }
+}
+
 source "vagrant" "image" {
   communicator = "ssh"
-  source_path = "generic/ubuntu2204"
+  source_path = "ubuntu/jammy64"
   provider = "virtualbox"
   add_force = true
-  // Packer sometimes needs these ssh values for some images
-  ssh_username = "vagrant"
-  ssh_password = "vagrant"
 }
 
 build {
