@@ -13,8 +13,8 @@ gsettings set org.gnome.desktop.interface enable-animations false
 #gsettings set org.gnome.desktop.background picture-uri 'file:///usr/share/backgrounds/gnome/adwaita-timed.xml'
 
 # Favorite Apps
-#gsettings set org.gnome.shell favorite-apps "${favoritesstring}"
-gsettings set org.gnome.shell favorite-apps "['firefox.desktop', 'nautilus.desktop', 'gnome-terminal.desktop']"
+gsettings set org.gnome.shell favorite-apps "${favoritesstring}"
+#gsettings set org.gnome.shell favorite-apps "['firefox.desktop', 'nautilus.desktop', 'gnome-terminal.desktop']"
 
 # GEDIT
 gsettings set org.gnome.gedit.preferences.editor scheme 'oblivion'
