@@ -1,7 +1,6 @@
 file="/home/${username}/.config/config.sh"
 cat >> ${file} << EOF
 # Extensions
-gsettings set org.gnome.shell enabled-extensions "['dash-to-dock@gnome-shell-extensions.gcampax.github.com']"
 gsettings set org.gnome.shell.extensions.dash-to-dock custom-theme-shrink 'true'
 gsettings set org.gnome.shell.extensions.dash-to-dock dock-fixed 'true'
 gsettings set org.gnome.shell.extensions.dash-to-dock dock-position 'LEFT'

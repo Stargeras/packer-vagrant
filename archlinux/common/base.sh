@@ -2,7 +2,7 @@
 
 packages="base-devel git bash-completion curl wget htop vi vim \
 xorg-server xorg-apps xorg-xinit xdg-user-dirs open-vm-tools  htop \
-xf86-video-vesa xf86-video-vmware xf86-video-intel xf86-video-amdgpu xf86-video-nouveau"
+xf86-video-vesa xf86-video-vmware xf86-video-intel xf86-video-amdgpu xf86-video-nouveau virtualbox-guest-utils"
 
 # PACMAN INIT
 pacman-key --init && pacman-key --populate
@@ -19,12 +19,18 @@ sed -i '/CheckSpace/d' /etc/pacman.conf
 # UPDATE PACKAGES
 pacman -Syu --noconfirm
 
+# LOCALIZATION
+echo "LANG=en.US.UTF-8" >> /etc/locale.gen
+locale-gen
+
 # USE REFLECTOR TO RATE MIRRORS
 #pacman -S reflector --noconfirm
 #reflector --verbose --country 'United States' --sort rate --save /etc/pacman.d/mirrorlist
 
 # INSTALL PACKAGES
 #pacman -Rsn clonezilla lftp nmap openconnect --noconfirm
+
+pacman -Rsn virtualbox-guest-utils-nox --noconfirm
 pacman -S ${packages} --noconfirm
 
 # ADD KERNEL TO PACMAN EXCEPTION

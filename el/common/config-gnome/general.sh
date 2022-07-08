@@ -7,6 +7,13 @@ for fav in ${favorites}; do
 done
 favoritesstring="${favoritesstring::-2}]"
 
+extensions=$(echo ${GNOMEEXTENSIONS} | sed "s/__/ /g")
+extensionsstring="["
+for extension in ${extensions}; do
+  extensionsstring+="'${extension}', "
+done
+extensionsstring="${extensionsstring::-2}]"
+
 cat >> ${file} << EOF
 gsettings set org.gnome.desktop.wm.preferences button-layout "appmenu:minimize,maximize,close"
 gsettings set org.gnome.desktop.interface enable-animations false
@@ -15,6 +22,9 @@ gsettings set org.gnome.desktop.interface enable-animations false
 # Favorite Apps
 gsettings set org.gnome.shell favorite-apps "${favoritesstring}"
 #gsettings set org.gnome.shell favorite-apps "['firefox.desktop', 'nautilus.desktop', 'gnome-terminal.desktop']"
+
+# Enable extensions
+gsettings set org.gnome.shell enabled-extensions "${extensionsstring}"
 
 # GEDIT
 gsettings set org.gnome.gedit.preferences.editor scheme 'oblivion'
