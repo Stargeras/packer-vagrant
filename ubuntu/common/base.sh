@@ -15,8 +15,8 @@ alias ytdv='youtube-dl -f bestvideo+bestaudio'
 EOF
 cp /etc/skel/.bashrc /root/
 
-useradd -m -g users -s /bin/bash -G wheel,storage,power ${username}
-usermod -aG sudo,netdev,disk ${username}
+useradd -m -g users -s /bin/bash ${username}
+usermod -aG sudo,disk ${username}
 echo "${username}:${username}" |chpasswd
 echo 'root:root' | chpasswd
 
