@@ -70,6 +70,8 @@ alias cpu='ps axch -o cmd:15,%cpu --sort=-%cpu | head'
 #export PS1="\[\e[31m\]\u\[\e[m\]@\h\[\e[34m\]\w\[\e[m\]\\$ "
 # Debian colors
 PS1='\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+# Kubectl editor
+export KUBE_EDITOR=vim
 EOF
 
 cat >> /home/${username}/.bashrc << EOF
@@ -80,6 +82,8 @@ alias cpu='ps axch -o cmd:15,%cpu --sort=-%cpu | head'
 #export PS1="\[\e[31m\]\u\[\e[m\]@\h\[\e[34m\]\w\[\e[m\]\\$ "
 # Debian colors
 PS1='\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+# Kubectl editor
+export KUBE_EDITOR=vim
 EOF
 chown ${username}:users /home/${username}/.bashrc
 

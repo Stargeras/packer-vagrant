@@ -7,7 +7,7 @@ gsettings set org.gnome.desktop.background picture-uri-dark 'file:///usr/share/b
 gsettings set org.gnome.desktop.screensaver picture-uri 'file:///usr/share/backgrounds/f36/default/f36.xml'
 
 # Fonts
-gsettings set org.gnome.desktop.interface monospace-font-name 'Monospace 11'
+gsettings set org.gnome.desktop.interface monospace-font-name 'Liberation Mono 11'
 #Default font was "Source code pro 10"
 
 # GEDIT
