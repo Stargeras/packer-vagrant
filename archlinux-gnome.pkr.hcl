@@ -31,6 +31,7 @@ build {
       "ENABLEDSERVICES=NetworkManager__gdm__sshd__cups-browsed__docker",
       "TIMEZONE=America/New_York",
       "FAVORITEAPPS=chromium.desktop__nautilus.desktop__gnome-terminal.desktop",
+      "VSCODEEXTENSIONS=hashicorp.terraform"
     ]
     scripts           = [
       "./archlinux/common/base.sh",
@@ -40,6 +41,7 @@ build {
       "./archlinux/common/gnome-autostart-script.sh",
       "./archlinux/common/firefox-edits.sh",
       "./archlinux/common/chromium-fix.sh",
+      "./archlinux/common/vscode-extensions.sh",
       "./archlinux/common/config-gnome/general.sh",
       "./archlinux/common/config-gnome/dash-to-panel.sh",
       "./archlinux/gnome/additions.sh",
