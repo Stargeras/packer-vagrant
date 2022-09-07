@@ -18,6 +18,8 @@ build {
       "DEBURLS=https://f5vpn.geneseo.edu/public/download/linux_f5vpn.x86_64.deb__http://cackey.rkeene.org/download/0.7.5/cackey_0.7.5-1_amd64.deb__https://az764295.vo.msecnd.net/stable/c3511e6c69bb39013c4a4b7b9566ec1ca73fc4d5/code_1.67.2-1652812855_amd64.deb",  
       "TIMEZONE=America/New_York",
       "FAVORITEAPPS=chromium.desktop__nautilus.desktop__gnome-terminal.desktop",
+      "VSCODEEXTENSIONS=hashicorp.terraform",
+      "GNOMESCALINGFACTOR=1.25",
     ]
     scripts = [
       "./debian/common/base.sh",
@@ -26,6 +28,7 @@ build {
       "./debian/bullseye-gnome/material-shell.sh",
       "./debian/common/gnome-autostart-script.sh",
       "./debian/common/firefox-edits.sh",
+      "./debian/common/vscode-extensions.sh",
       "./debian/common/vbox-guest-additions.sh",
       "./debian/common/config-gnome/general.sh",
       "./debian/common/config-gnome/dash-to-panel.sh",

@@ -12,6 +12,7 @@ cat >> ${file} << EOF
 gsettings set org.gnome.desktop.wm.preferences button-layout "appmenu:minimize,maximize,close"
 gsettings set org.gnome.desktop.interface enable-animations false
 gsettings set org.gnome.desktop.background picture-uri 'file:///usr/share/backgrounds/gnome/adwaita-timed.xml'
+gsettings set org.gnome.desktop.interface text-scaling-factor ${GNOMESCALINGFACTOR}
 
 # Favorite Apps
 gsettings set org.gnome.shell favorite-apps "${favoritesstring}"
@@ -22,7 +23,7 @@ gsettings set org.gnome.gedit.preferences.editor display-line-numbers true
 
 # Nautilus
 gsettings set org.gnome.nautilus.window-state initial-size '(1119, 604)'
-gsettings set org.gnome.nautilus.icon-view default-zoom-level 'small'
+gsettings set org.gnome.nautilus.icon-view default-zoom-level 'standard'
 
 # Terminal
 gsettings set org.gnome.Terminal.Legacy.Settings theme-variant dark

@@ -27,11 +27,12 @@ build {
     environment_vars  = [
       "username=vagrant",
       "PACKAGES=gnome__firefox__chromium__epiphany__neofetch__imwheel__gnome-tweaks__gnome-connections__gparted__celluloid__cups__dnsutils__virt-viewer__freerdp__docker__code__ttf-droid__networkmanager__gedit__terraform__kubectl__helm__minikube__aws-cli",
-      "AURPACKAGES=yay__f5vpn__cackey__gnome-shell-extension-dash-to-panel__gnome-shell-extension-dash-to-dock__gnome-backgrounds-lakeside-git__brave-bin__flux-bin",
+      "AURPACKAGES=yay__f5vpn__cackey__gnome-shell-extension-dash-to-panel__gnome-shell-extension-dash-to-dock__gnome-backgrounds-lakeside-git__brave-bin__flux-bin__lens",
       "ENABLEDSERVICES=NetworkManager__gdm__sshd__cups-browsed__docker",
       "TIMEZONE=America/New_York",
       "FAVORITEAPPS=chromium.desktop__nautilus.desktop__gnome-terminal.desktop",
-      "VSCODEEXTENSIONS=hashicorp.terraform"
+      "VSCODEEXTENSIONS=hashicorp.terraform",
+      "GNOMESCALINGFACTOR=1.25",
     ]
     scripts           = [
       "./archlinux/common/base.sh",
