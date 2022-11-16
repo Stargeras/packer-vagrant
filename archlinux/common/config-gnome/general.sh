@@ -21,14 +21,17 @@ gsettings set org.gnome.gedit.preferences.editor scheme 'oblivion'
 gsettings set org.gnome.gedit.preferences.editor display-line-numbers true
 
 # Nautilus
-gsettings set org.gnome.nautilus.window-state initial-size '(1119, 604)'
-gsettings set org.gnome.nautilus.icon-view default-zoom-level 'standard'
+gsettings set org.gnome.nautilus.window-state initial-size '(1390, 755)'
+gsettings set org.gnome.nautilus.icon-view default-zoom-level 'small'
 
 # Terminal
 gsettings set org.gnome.Terminal.Legacy.Settings theme-variant dark
 dconf write /org/gnome/terminal/legacy/profiles:/:b1dcc9dd-5262-4d8d-a863-c897e6d979b9/bold-is-bright 'true'
 gsettings set org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:b1dcc9dd-5262-4d8d-a863-c897e6d979b9/ default-size-rows 33
 gsettings set org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:b1dcc9dd-5262-4d8d-a863-c897e6d979b9/ default-size-columns 123
+
+# Gnome-Console
+gsettings set org.gnome.Console last-window-size '(1400, 772)'
 
 # Keybindings
 dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings "['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/']"

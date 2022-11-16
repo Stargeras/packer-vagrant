@@ -8,7 +8,7 @@ packages=$(echo ${PACKAGES} | sed "s/__/ /g")
 rpmurls=$(echo ${RPMURLS} | sed "s/__/ /g")
 
 for group in ${dnfgroups}; do
-  dnf group install -y ${group}
+  dnf group install -y ${group} --allowerasing
 done
 
 dnf install -y ${packages}

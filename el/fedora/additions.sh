@@ -14,6 +14,10 @@ gsettings set org.gnome.desktop.interface monospace-font-name 'Liberation Mono 1
 gsettings set org.gnome.TextEditor style-scheme 'Adwaita'
 gsettings set org.gnome.TextEditor style-variant 'dark'
 gsettings set org.gnome.TextEditor show-line-numbers true
+
+# Gnome-Console
+gsettings set org.gnome.Console last-window-size '(1400, 772)'
+
 EOF
 chown ${username}:users ${file}
 chmod +x ${file}
