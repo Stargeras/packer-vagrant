@@ -26,17 +26,16 @@ build {
     expect_disconnect = true
     environment_vars  = [
       "username=vagrant",
-      "PACKAGES=gnome__gnome-terminal__firefox__chromium__epiphany__neofetch__imwheel__gnome-tweaks__gnome-connections__gparted__celluloid__cups__dnsutils__virt-viewer__freerdp__docker__code__ttf-droid__networkmanager__gedit__terraform__kubectl__helm__minikube__aws-cli",
-      "AURPACKAGES=yay__f5vpn__cackey__gnome-shell-extension-dash-to-panel__gnome-shell-extension-dash-to-dock__gnome-backgrounds-lakeside-git__brave-bin__flux-bin",
+      "PACKAGES=gnome__gnome-terminal__firefox__chromium__epiphany__neofetch__imwheel__gnome-tweaks__gnome-connections__gparted__celluloid__cups__dnsutils__virt-viewer__freerdp__docker__ttf-droid__networkmanager__gedit__terraform__kubectl__helm__minikube__aws-cli",
+      "AURPACKAGES=yay__f5vpn__cackey__gnome-shell-extension-dash-to-panel__gnome-shell-extension-dash-to-dock__gnome-backgrounds-lakeside-git__brave-bin__flux-bin__visual-studio-code-bin",
       "ENABLEDSERVICES=NetworkManager__gdm__sshd__cups-browsed__docker",
       "TIMEZONE=America/New_York",
       "FAVORITEAPPS=chromium.desktop__nautilus.desktop__gnome-terminal.desktop",
-      "VSCODEEXTENSIONS=hashicorp.terraform",
+      "VSCODEEXTENSIONS=hashicorp.terraform__hashicorp.hcl",
       "GNOMESCALINGFACTOR=1.25",
     ]
     scripts           = [
       "./archlinux/common/base.sh",
-      "./archlinux/common/chaotic-aur.sh",
       "./archlinux/common/packages.sh",
       "./archlinux/common/enable-services.sh",
       "./archlinux/common/vscode-extensions.sh",
