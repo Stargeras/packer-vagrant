@@ -31,13 +31,13 @@ gsettings set org.gnome.desktop.interface gtk-theme  'io.elementary.stylesheet.b
 gsettings set org.gnome.desktop.interface icon-theme 'elementary'
 gsettings set org.gnome.desktop.interface cursor-theme 'elementary'
 gsettings set org.gnome.desktop.wm.preferences button-layout 'close:maximize'
-gsettings set org.pantheon.desktop.gala.animations enable-animations 'true'
+gsettings set org.pantheon.desktop.gala.animations enable-animations 'false'
 gsettings set org.gnome.desktop.background picture-uri 'file:///usr/share/backgrounds/elementaryos-default'
 gsettings set org.gnome.desktop.interface clock-format '12h'
 gsettings set io.elementary.desktop.wingpanel.datetime clock-format '12h'
 gsettings set io.elementary.code.saved-state window-size '(1280, 810)'
 #gsettings set io.elementary.files.preferences window-size '(1280, 810)'
-#dconf write /net/launchpad/plank/docks/dock1/hide-mode "'none'"
+dconf write /net/launchpad/plank/docks/dock1/hide-mode "'none'"
 dconf write /net/launchpad/plank/docks/dock1/theme "'Gtk+'"
 gsettings set org.gnome.desktop.peripherals.touchpad tap-to-click true
 # Terminal font
@@ -49,8 +49,7 @@ gsettings set org.gnome.Epiphany default-search-engine 'Google'
 gsettings set org.gnome.Epiphany restore-session-policy 'crashed'
 
 # Desktop zoom
-# gsettings set org.gnome.desktop.interface text-scaling-factor '1.25'
-# gsettings set org.gnome.desktop.interface text-scaling-factor '1.50'
+gsettings set org.gnome.desktop.interface text-scaling-factor ${GNOMESCALINGFACTOR}
 
 # imwheel config
 cat > \${HOME}/.imwheelrc << EOT

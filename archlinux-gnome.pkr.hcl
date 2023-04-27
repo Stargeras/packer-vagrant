@@ -31,7 +31,7 @@ build {
       "ENABLEDSERVICES=NetworkManager__gdm__sshd__cups-browsed__docker",
       "TIMEZONE=America/New_York",
       "FAVORITEAPPS=chromium.desktop__nautilus.desktop__gnome-terminal.desktop",
-      "VSCODEEXTENSIONS=hashicorp.terraform__hashicorp.hcl",
+      "VSCODEEXTENSIONS=hashicorp.terraform__hashicorp.hcl__eamodio.gitlens",
       "GNOMESCALINGFACTOR=1.25",
     ]
     scripts           = [

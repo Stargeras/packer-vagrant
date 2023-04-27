@@ -72,6 +72,7 @@ alias cpu='ps axch -o cmd:15,%cpu --sort=-%cpu | head'
 PS1='\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
 # Kubectl editor
 export KUBE_EDITOR=vim
+export HISTCONTROL=ignoreboth:erasedups
 EOF
 
 cat >> /home/${username}/.bashrc << EOF
