@@ -14,6 +14,8 @@ gsettings set org.gnome.desktop.interface enable-animations false
 # Favorite Apps
 gsettings set org.gnome.shell favorite-apps "${favoritesstring}"
 
+gsettings set org.gnome.desktop.interface text-scaling-factor ${GNOMESCALINGFACTOR}
+
 # GEDIT
 gsettings set org.gnome.gedit.preferences.editor scheme 'oblivion'
 gsettings set org.gnome.gedit.preferences.editor display-line-numbers true
