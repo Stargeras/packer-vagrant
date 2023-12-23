@@ -35,6 +35,9 @@ curl https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | bash
 # INSTALL FLUXCD
 curl -s https://fluxcd.io/install.sh | bash
 
+# INSTALL AZ CLI
+curl -sL https://aka.ms/InstallAzureCLIDeb | bash
+
 # ADD USER TO DOCKER GROUP
 usermod -aG docker ${username}
 
