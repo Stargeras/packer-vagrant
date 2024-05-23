@@ -9,7 +9,7 @@ packer {
 
 source "vagrant" "image" {
   communicator = "ssh"
-  source_path = "generic/fedora38"
+  source_path = "generic/fedora39"
   provider = "virtualbox"
   add_force = true
 }

@@ -2,12 +2,12 @@
 file="/home/${username}/.config/config.sh"
 cat >> ${file} << EOF
 # Background
-gsettings set org.gnome.desktop.background picture-uri 'file:///usr/share/backgrounds/f36/default/f36.xml'
-gsettings set org.gnome.desktop.background picture-uri-dark 'file:///usr/share/backgrounds/f36/default/f36.xml'
-gsettings set org.gnome.desktop.screensaver picture-uri 'file:///usr/share/backgrounds/f36/default/f36.xml'
+#gsettings set org.gnome.desktop.background picture-uri 'file:///usr/share/backgrounds/f36/default/f36.xml'
+#gsettings set org.gnome.desktop.background picture-uri-dark 'file:///usr/share/backgrounds/f36/default/f36.xml'
+#gsettings set org.gnome.desktop.screensaver picture-uri 'file:///usr/share/backgrounds/f36/default/f36.xml'
 
 # Fonts
-gsettings set org.gnome.desktop.interface monospace-font-name 'Liberation Mono 11'
+#gsettings set org.gnome.desktop.interface monospace-font-name 'Liberation Mono 11'
 #Default font was "Source code pro 10"
 
 # GEDIT
