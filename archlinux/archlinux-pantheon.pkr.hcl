@@ -26,16 +26,16 @@ build {
       "GNOMESCALINGFACTOR=1.25",
     ]
     scripts           = [
-      "./archlinux/common/base.sh",
-      "./archlinux/common/packages.sh",
-      "./archlinux/common/enable-services.sh",
-      "./archlinux/common/vscode-extensions.sh",
-      "./archlinux/common/gnome-autostart-script.sh",
-      "./archlinux/common/firefox-edits.sh",
-      "./archlinux/pantheon/additions.sh",
-      "./archlinux/common/reboot.sh",
-      "./archlinux/common/vbox-guest-additions.sh",
-      "./archlinux/common/finalize.sh",
+      "${path.root}/common/base.sh",
+      "${path.root}/common/packages.sh",
+      "${path.root}/common/enable-services.sh",
+      "${path.root}/common/vscode-extensions.sh",
+      "${path.root}/common/gnome-autostart-script.sh",
+      "${path.root}/common/firefox-edits.sh",
+      "${path.root}/pantheon/additions.sh",
+      "${path.root}/common/reboot.sh",
+      "${path.root}/common/vbox-guest-additions.sh",
+      "${path.root}/common/finalize.sh",
     ]
   }
 }

@@ -16,6 +16,10 @@ gsettings set org.gnome.shell favorite-apps "${favoritesstring}"
 
 gsettings set org.gnome.desktop.interface text-scaling-factor ${GNOMESCALINGFACTOR}
 
+# Theme
+gsettings set org.gnome.desktop.interface gtk-theme 'Yaru-red'
+gsettings set org.gnome.desktop.interface icon-theme 'Yaru-red'
+
 # GEDIT
 gsettings set org.gnome.gedit.preferences.editor scheme 'oblivion'
 gsettings set org.gnome.gedit.preferences.editor display-line-numbers true

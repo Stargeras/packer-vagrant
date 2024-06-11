@@ -23,14 +23,14 @@ build {
       "TIMEZONE=America/New_York",
     ]
     scripts           = [
-      "./archlinux/common/base.sh",
-      "./archlinux/common/packages.sh",
-      "./archlinux/common/enable-services.sh",
-      "./archlinux/common/firefox-edits.sh",
-      "./archlinux/plasma/sddm.sh",
-      "./archlinux/common/reboot.sh",
-      "./archlinux/common/vbox-guest-additions.sh",
-      "./archlinux/common/finalize.sh",
+      "${path.root}/common/base.sh",
+      "${path.root}/common/packages.sh",
+      "${path.root}/common/enable-services.sh",
+      "${path.root}/common/firefox-edits.sh",
+      "${path.root}/plasma/sddm.sh",
+      "${path.root}/common/reboot.sh",
+      "${path.root}/common/vbox-guest-additions.sh",
+      "${path.root}/common/finalize.sh",
     ]
   }
 }

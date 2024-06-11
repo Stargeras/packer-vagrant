@@ -9,7 +9,7 @@ packer {
 
 source "vagrant" "image" {
   communicator = "ssh"
-  source_path = "generic/rocky9"
+  source_path = "generic/alma9"
   provider = "virtualbox"
   add_force = true
 }
@@ -32,19 +32,19 @@ build {
       "GNOMEEXTENSIONS=dash-to-dock@gnome-shell-extensions.gcampax.github.com",
     ]
     scripts = [
-      "./el/common/base.sh",
-      "./el/common/packages.sh",
-      "./el/common/enable-services.sh",
-      "./el/common/gnome-autostart-script.sh",
-      "./el/common/systemd-target.sh",
-      "./el/common/install_binaries.sh",
-      "./el/common/brave-browser.sh",
-      "./el/common/firefox-edits.sh",
-      "./el/common/modeset.sh",
-      "./el/common/config-gnome/general.sh",
-      "./el/common/config-gnome/dash-to-dock.sh",
-      "./el/common/config-gnome/imwheel.sh",
-      "./el/common/finalize.sh",
+      "${path.root}/common/base.sh",
+      "${path.root}/common/packages.sh",
+      "${path.root}/common/enable-services.sh",
+      "${path.root}/common/gnome-autostart-script.sh",
+      "${path.root}/common/systemd-target.sh",
+      "${path.root}/common/install_binaries.sh",
+      "${path.root}/common/brave-browser.sh",
+      "${path.root}/common/firefox-edits.sh",
+      "${path.root}/common/modeset.sh",
+      "${path.root}/common/config-gnome/general.sh",
+      "${path.root}/common/config-gnome/dash-to-dock.sh",
+      "${path.root}/common/config-gnome/imwheel.sh",
+      "${path.root}/common/finalize.sh",
     ]
   }
 }

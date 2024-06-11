@@ -1,17 +1,18 @@
 #!/bin/bash
 
-packages="base-devel git bash-completion curl wget htop vi vim \
-xorg-server xorg-apps xorg-xinit xdg-user-dirs open-vm-tools  htop \
+packages="git bash-completion curl wget htop vim\
+xdg-user-dirs open-vm-tools \
 xf86-video-vesa xf86-video-vmware xf86-video-intel xf86-video-amdgpu xf86-video-nouveau virtualbox-guest-utils"
 
 # PACMAN INIT
 pacman-key --init && pacman-key --populate
+pacman -Sy archlinux-keyring --noconfirm && pacman -Su --noconfirm
 
 # REMOVE BROKEN MIRRORS
-brokenmirrors="evowise"
-for mirror in ${brokenmirrors}; do
-  sed -i "/${mirror}/d" /etc/pacman.d/mirrorlist
-done
+#brokenmirrors="evowise"
+#for mirror in ${brokenmirrors}; do
+#  sed -i "/${mirror}/d" /etc/pacman.d/mirrorlist
+#done
 
 # FIX PACMAN SPACE ERROR
 sed -i '/CheckSpace/d' /etc/pacman.conf

@@ -38,6 +38,9 @@ curl -s https://fluxcd.io/install.sh | bash
 # INSTALL AZ CLI
 curl -sL https://aka.ms/InstallAzureCLIDeb | bash
 
+# INSTALL STARSHIP
+curl -sS https://starship.rs/install.sh | sh -s - -y
+
 # ADD USER TO DOCKER GROUP
 usermod -aG docker ${username}
 

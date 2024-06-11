@@ -1,21 +1,23 @@
 #!/bin/bash
 
+components=$(echo ${COMPONENTS} | sed "s/__/ /g")
+
 packages="xserver-xorg-core xdg-user-dirs sudo ssh vim curl bash-completion git debootstrap arch-install-scripts \
-firmware-realtek firmware-misc-nonfree firmware-libertas firmware-iwlwifi firmware-intelwimax firmware-linux open-vm-tools"
+firmware-realtek firmware-misc-nonfree firmware-libertas firmware-iwlwifi firmware-linux open-vm-tools"
 
 cat > /etc/apt/sources.list << EOF
-deb http://deb.debian.org/debian/ ${CODENAME} main contrib non-free
-deb-src http://deb.debian.org/debian/ ${CODENAME} main contrib non-free
+deb http://deb.debian.org/debian/ ${CODENAME} ${components}
+deb-src http://deb.debian.org/debian/ ${CODENAME} ${components}
 
-deb http://deb.debian.org/debian/ ${CODENAME}-updates main contrib non-free
-deb-src http://deb.debian.org/debian/ ${CODENAME}-updates main contrib non-free
+deb http://deb.debian.org/debian/ ${CODENAME}-updates ${components}
+deb-src http://deb.debian.org/debian/ ${CODENAME}-updates ${components}
 
 EOF
 
 if [[ ${USESECURITYREPO} == "true" ]]; then
   cat >> /etc/apt/sources.list << EOF
-deb http://deb.debian.org/debian-security/ ${CODENAME}-security main contrib non-free
-deb-src http://deb.debian.org/debian-security/ ${CODENAME}-security main contrib non-free
+deb http://deb.debian.org/debian-security/ ${CODENAME}-security ${components}
+deb-src http://deb.debian.org/debian-security/ ${CODENAME}-security ${components}
 EOF
 fi
 

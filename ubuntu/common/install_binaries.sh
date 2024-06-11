@@ -35,6 +35,9 @@ curl https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | bash
 # INSTALL FLUXCD
 curl -s https://fluxcd.io/install.sh | bash
 
+# INSTALL STARSHIP
+curl -sS https://starship.rs/install.sh | sh -s - -y
+
 # ADD USER TO DOCKER GROUP
 usermod -aG docker ${username}
 

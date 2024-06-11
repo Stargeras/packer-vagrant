@@ -21,16 +21,16 @@ build {
       "FAVORITEAPPS=firefox.desktop__nautilus.desktop__gnome-terminal.desktop"
     ]
     scripts = [
-      "./el/common/base.sh",
-      "./el/common/packages.sh",
-      "./el/common/enable-services.sh",
-      "./el/common/gnome-autostart-script.sh",
-      "./el/common/systemd-target.sh",
-      "./el/common/install_binaries.sh",
-      "./el/common/firefox-edits.sh",
-      "./el/common/config-gnome/general.sh",
-      "./el/common/config-gnome/dash-to-panel.sh",
-      "./el/common/finalize.sh",
+      "${path.root}/common/base.sh",
+      "${path.root}/common/packages.sh",
+      "${path.root}/common/enable-services.sh",
+      "${path.root}/common/gnome-autostart-script.sh",
+      "${path.root}/common/systemd-target.sh",
+      "${path.root}/common/install_binaries.sh",
+      "${path.root}/common/firefox-edits.sh",
+      "${path.root}/common/config-gnome/general.sh",
+      "${path.root}/common/config-gnome/dash-to-panel.sh",
+      "${path.root}/common/finalize.sh",
     ]
   }
 }

@@ -24,17 +24,17 @@ build {
       "FAVORITEAPPS=chromium.desktop__nautilus.desktop__gnome-terminal.desktop",
     ]
     scripts           = [
-      "./archlinux/common/base.sh",
-      "./archlinux/common/packages.sh",
-      "./archlinux/common/enable-services.sh",
-      "./archlinux/common/gnome-autostart-script.sh",
-      "./archlinux/common/firefox-edits.sh",
-      "./archlinux/common/config-gnome/general.sh",
-      "./archlinux/gnome-ubuntu/additions.sh",
-      "./archlinux/common/reboot.sh",
-      "./archlinux/common/vbox-guest-additions.sh",
-      "./archlinux/common/reboot.sh",
-      "./archlinux/common/finalize.sh",
+      "${path.root}/common/base.sh",
+      "${path.root}/common/packages.sh",
+      "${path.root}/common/enable-services.sh",
+      "${path.root}/common/gnome-autostart-script.sh",
+      "${path.root}/common/firefox-edits.sh",
+      "${path.root}/common/config-gnome/general.sh",
+      "${path.root}/gnome-ubuntu/additions.sh",
+      "${path.root}/common/reboot.sh",
+      "${path.root}/common/vbox-guest-additions.sh",
+      "${path.root}/common/reboot.sh",
+      "${path.root}/common/finalize.sh",
     ]
   }
 }
