@@ -3,3 +3,4 @@ vagrant/.vagrant/
 vagrant/.Trash-1000/
 vagrant/Vagrantfile
 output-image/
+*.swp

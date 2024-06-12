@@ -9,9 +9,11 @@ packer {
 
 source "vagrant" "image" {
   communicator = "ssh"
-  source_path = "generic/fedora39"
+  source_path = "fedora/40-cloud-base"
   provider = "virtualbox"
   add_force = true
+  ssh_username = "vagrant"
+  ssh_password = "vagrant"
 }
 
 build {
@@ -39,10 +41,7 @@ build {
       "${path.root}/common/enable-services.sh",
       "${path.root}/common/systemd-target.sh",
       "${path.root}/common/install_binaries.sh",
-      "${path.root}/common/brave-browser.sh",
-      "${path.root}/common/modeset.sh",
       "${path.root}/common/vscode-extensions.sh",
-      "${path.root}/common/gnome-autostart-script.sh",
       "${path.root}/common/config-gnome/general.sh",
       "${path.root}/common/config-gnome/dash-to-dock.sh",
       "${path.root}/common/config-gnome/imwheel.sh",

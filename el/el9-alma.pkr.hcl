@@ -9,7 +9,7 @@ packer {
 
 source "vagrant" "image" {
   communicator = "ssh"
-  source_path = "generic/alma9"
+  source_path = "almalinux/9"
   provider = "virtualbox"
   add_force = true
 }
