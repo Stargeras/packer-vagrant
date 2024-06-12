@@ -20,6 +20,7 @@ build {
       "TIMEZONE=America/New_York",
       "FAVORITEAPPS=chromium.desktop__nautilus.desktop__gnome-terminal.desktop",
       "VSCODEEXTENSIONS=hashicorp.terraform__hashicorp.hcl__eamodio.gitlens",
+      "VIMEXTENSTIONS=https://github.com/hashivim/vim-terraform.git",
       "GNOMESCALINGFACTOR=1.25",
     ]
     scripts = [
@@ -34,6 +35,7 @@ build {
       "${path.root}/common/gnome-autostart-script.sh",
       "${path.root}/common/config-gnome/general.sh",
       "${path.root}/common/config-gnome/dash-to-panel.sh",
+      "${path.root}/../common/vim.sh",
       "${path.root}/common/finalize.sh",
     ]
   }

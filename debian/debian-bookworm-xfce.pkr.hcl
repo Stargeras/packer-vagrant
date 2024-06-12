@@ -15,10 +15,11 @@ build {
       "CODENAME=bookworm",
       "COMPONENTS=main__contrib__non-free__non-free-firmware",
       "USESECURITYREPO=true",
-      "PACKAGES=xfce4__firefox-esr__chromium__neofetch__imwheel__gparted__celluloid__cups__curl__vim__awscli__dnsutils__virt-viewer__freerdp2-x11__docker.io",
+      "PACKAGES=xfce4__firefox-esr__chromium__neofetch__imwheel__gparted__celluloid__cups__curl__vim__awscli__dnsutils__virt-viewer__freerdp2-x11__docker.io__vim-gui-common",
       "DEBURLS=https://f5vpn.geneseo.edu/public/download/linux_f5vpn.x86_64.deb__http://cackey.rkeene.org/download/0.7.5/cackey_0.7.5-1_amd64.deb__https://vscode.download.prss.microsoft.com/dbazure/download/stable/89de5a8d4d6205e5b11647eb6a74844ca23d2573/code_1.90.0-1717531825_amd64.deb",  
       "TIMEZONE=America/New_York",
       "VSCODEEXTENSIONS=hashicorp.terraform__hashicorp.hcl__eamodio.gitlens",
+      "VIMEXTENSTIONS=https://github.com/hashivim/vim-terraform.git",
     ]
     scripts = [
       "${path.root}/common/base.sh",
@@ -26,6 +27,7 @@ build {
       "${path.root}/common/install_binaries.sh",
       "${path.root}/common/vscode-extensions.sh",
       "${path.root}/common/vbox-guest-additions.sh",
+      "${path.root}/../common/vim.sh",
       "${path.root}/common/finalize.sh",
     ]
   }
