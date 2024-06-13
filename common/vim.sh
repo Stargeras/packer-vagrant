@@ -1,9 +1,11 @@
 #!/bin/bash
 
-vimextenstions=$(echo ${VIMEXTENSIONS} | sed "s/__/ /g")
+vimextensions="$(echo ${VIMEXTENSIONS} | sed "s/__/ /g")"
+extensiondir="/home/${username}/.vim/pack/plugins/start"
 
 # VIM CUSTOMIZATIONS
-cat > /home/${username}/.vimrc << EOF
+file="/home/${username}/.vimrc"
+cat > ${file} << EOF
 syntax on
 colorscheme slate
 set hlsearch " highlights all results from / searches
@@ -18,21 +20,21 @@ set smartindent " indents newline to currentline
 set clipboard=unnamedplus " Merges vim register with system clipboard
 nnoremap <leader>e :Explore<CR>  " maps \e to explore mode
 EOF
-chown ${username}:users /home/${username}/.vimrc
-cp /home/${username}/.gvimrc /root/
+chown ${username}:users ${file}
+cp ${file} /root/
 
 
 # GVIM CUSTOMIZATIONS
-cat > /home/${username}/.gvimrc << EOF
+file="/home/${username}/.gvimrc"
+cat > ${file} << EOF
 color desert
 set guifont=Monospace\ 12 " set font in gvim
 set mouse=a
 EOF
-chown ${username}:users /home/${username}/.gvimrc
-cp /home/${username}/.gvimrc /root/
+chown ${username}:users ${file}
+cp ${file} /root/
 
 # VIM EXTENSTIONS
-extensiondir="/home/${username}/.vim/pack/plugins/start"
 mkdir -p ${extensiondir}
 for extension in $vimextensions; do
   cd ${extensiondir}

@@ -1,6 +1,6 @@
 source "vagrant" "image" {
   communicator = "ssh"
-  source_path = "debian/bookworm64"
+  source_path = "debian/buster64"
   provider = "virtualbox"
   add_force = true
 }
@@ -13,13 +13,12 @@ build {
     expect_disconnect = true
     environment_vars = [
       "username=vagrant",
-      "CODENAME=bookworm",
-      "COMPONENTS=main__contrib__non-free__non-free-firmware",
-      "PACKAGES=gnome__firefox-esr__chromium__neofetch__imwheel__gparted__celluloid__gnome-shell-extension-dash-to-panel__cups__curl__vim__awscli__dnsutils__virt-viewer__freerdp2-x11__docker.io__vim-gui-common",
-      "DEBURLS=https://f5vpn.geneseo.edu/public/download/linux_f5vpn.x86_64.deb__http://cackey.rkeene.org/download/0.7.5/cackey_0.7.5-1_amd64.deb__https://vscode.download.prss.microsoft.com/dbazure/download/stable/89de5a8d4d6205e5b11647eb6a74844ca23d2573/code_1.90.0-1717531825_amd64.deb",  
+      "CODENAME=buster",
+      "COMPONENTS=main__contrib__non-free",
+      "PACKAGES=gnome__firefox-esr__chromium__neofetch__imwheel__gparted__gnome-shell-extension-dash-to-panel__cups__dnsutils__virt-viewer__freerdp2-x11__docker.io__vim-gui-common",
+      "DEBURLS=https://f5vpn.geneseo.edu/public/download/linux_f5vpn.x86_64.deb__http://cackey.rkeene.org/download/0.7.5/cackey_0.7.5-1_amd64.deb",  
       "TIMEZONE=America/New_York",
       "FAVORITEAPPS=chromium.desktop__nautilus.desktop__gnome-terminal.desktop",
-      "VSCODEEXTENSIONS=hashicorp.terraform__hashicorp.hcl__eamodio.gitlens",
       "VIMEXTENSIONS=https://github.com/hashivim/vim-terraform.git",
       "GNOMESCALINGFACTOR=1.25",
     ]
@@ -29,13 +28,10 @@ build {
       "${path.root}/common/packages.sh",
       "${path.root}/common/install_binaries.sh",
       "${path.root}/common/firefox-edits.sh",
-      "${path.root}/common/vscode-extensions.sh",
-      "${path.root}/common/chromium-fix.sh",
       "${path.root}/common/vbox-guest-additions.sh",
       "${path.root}/common/gnome-autostart-script.sh",
       "${path.root}/common/config-gnome/general.sh",
       "${path.root}/common/config-gnome/dash-to-panel.sh",
-      "${path.root}/bookworm-gnome/additions.sh",
       "${path.root}/../common/vim.sh",
       "${path.root}/common/finalize.sh",
     ]

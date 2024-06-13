@@ -10,10 +10,10 @@ build {
   
   provisioner "shell" {
     execute_command = "sudo bash -c '{{ .Vars }} {{ .Path }}'"
+    expect_disconnect = true
     environment_vars = [
       "username=vagrant",
       "CODENAME=testing",
-      "USESECURITYREPO=false",
       "COMPONENTS=main__contrib__non-free__non-free-firmware",
       "PACKAGES=gnome__chromium__epiphany-browser__neofetch__imwheel__gparted__celluloid__gnome-shell-extension-dash-to-panel__cups__curl__vim__awscli__dnsutils__virt-viewer__freerdp2-x11__docker.io",
       "DEBURLS=https://f5vpn.geneseo.edu/public/download/linux_f5vpn.x86_64.deb__http://cackey.rkeene.org/download/0.7.5/cackey_0.7.5-1_amd64.deb__https://vscode.download.prss.microsoft.com/dbazure/download/stable/89de5a8d4d6205e5b11647eb6a74844ca23d2573/code_1.90.0-1717531825_amd64.deb",  
@@ -24,6 +24,7 @@ build {
     ]
     scripts = [
       "${path.root}/common/base.sh",
+      "${path.root}/../common/reboot.sh",
       "${path.root}/common/packages.sh",
       "${path.root}/common/install_binaries.sh",
       "${path.root}/common/firefox-edits.sh",
