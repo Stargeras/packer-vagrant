@@ -1,6 +1,6 @@
 #!/bin/bash
 
-packages="git bash-completion curl wget htop vim\
+packages="git bash-completion curl wget htop gvim \
 xdg-user-dirs open-vm-tools \
 xf86-video-vesa xf86-video-vmware xf86-video-intel xf86-video-amdgpu xf86-video-nouveau virtualbox-guest-utils"
 
@@ -57,10 +57,10 @@ echo 'root:root' | chpasswd
 
 # CREATE HOME DIRS
 su ${username} -c "xdg-user-dirs-update"
-cp /etc/X11/xinit/xinitrc /home/${username}/.xinitrc
-sed -i "$ d" /home/${username}/.xinitrc
-chmod +x /home/${username}/.xinitrc
-chown ${username}:users /home/${username}/.xinitrc
+#cp /etc/X11/xinit/xinitrc /home/${username}/.xinitrc
+#sed -i "$ d" /home/${username}/.xinitrc
+#chmod +x /home/${username}/.xinitrc
+#chown ${username}:users /home/${username}/.xinitrc
 
 # ADD BASHRC CUSTOMIZATIONS
 cat >> /etc/bash.bashrc << EOF
@@ -88,15 +88,6 @@ PS1='\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
 export KUBE_EDITOR=vim
 EOF
 chown ${username}:users /home/${username}/.bashrc
-
-# VIM CUSTOMIZATIONS
-cat > /home/${username}/.vimrc << EOF
-syntax on
-colorscheme slate
-set mouse=v
-EOF
-cp /home/${username}/.vimrc /root/.vimrc
-chown ${username}:users /home/${username}/.vimrc
 
 # PREVENT AUTO LOGIN
 #rm -f /etc/systemd/system/getty@tty1.service.d/autologin.conf

@@ -1,17 +1,17 @@
 source "vagrant" "image" {
   communicator = "ssh"
-  source_path = "debian/bullseye64"
-  provider = "virtualbox"
-  add_force = true
+  source_path  = "debian/bullseye64"
+  provider     = "virtualbox"
+  add_force    = true
 }
 
 build {
   sources = ["source.vagrant.image"]
   
   provisioner "shell" {
-    execute_command = "sudo bash -c '{{ .Vars }} {{ .Path }}'"
+    execute_command   = "sudo bash -c '{{ .Vars }} {{ .Path }}'"
     expect_disconnect = true
-    environment_vars = [
+    environment_vars  = [
       "username=vagrant",
       "COMPONENTS=main__contrib__non-free",
       "PACKAGES=gnome__firefox-esr__chromium__epiphany-browser__neofetch__imwheel__gparted__celluloid__gnome-shell-extension-dash-to-panel__cups__awscli__dnsutils__virt-viewer__freerdp2-x11__docker.io__vim-gui-common",

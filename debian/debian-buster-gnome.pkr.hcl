@@ -13,7 +13,6 @@ build {
     expect_disconnect = true
     environment_vars = [
       "username=vagrant",
-      "CODENAME=buster",
       "COMPONENTS=main__contrib__non-free",
       "PACKAGES=gnome__firefox-esr__chromium__neofetch__imwheel__gparted__gnome-shell-extension-dash-to-panel__cups__dnsutils__virt-viewer__freerdp2-x11__docker.io__vim-gui-common",
       "DEBURLS=https://f5vpn.geneseo.edu/public/download/linux_f5vpn.x86_64.deb__http://cackey.rkeene.org/download/0.7.5/cackey_0.7.5-1_amd64.deb",  
