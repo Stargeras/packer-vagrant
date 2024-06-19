@@ -2,7 +2,7 @@
 
 components=$(echo ${COMPONENTS} | sed "s/__/ /g")
 
-packages="xserver-xorg-core xdg-user-dirs sudo ssh vim curl bash-completion git debootstrap arch-install-scripts \
+packages="xserver-xorg-core xdg-user-dirs sudo ssh vim curl bash-completion git gcc debootstrap arch-install-scripts \
 firmware-realtek firmware-misc-nonfree firmware-libertas firmware-iwlwifi firmware-linux open-vm-tools"
 
 apt update
