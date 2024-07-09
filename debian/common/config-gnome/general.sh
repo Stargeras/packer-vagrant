@@ -1,12 +1,13 @@
 #!/bin/bash
 file="/home/${username}/.config/config.sh"
 
-favorites=$(echo ${FAVORITEAPPS} | sed "s/__/ /g")
+IFS="$FIELDSEPERATOR"
 favoritesstring="["
-for fav in ${favorites}; do
+for fav in ${FAVORITEAPPS}; do
   favoritesstring="${favoritesstring}'${fav}', "
 done
 favoritesstring="${favoritesstring::-2}]"
+unset IFS
 
 cat >> ${file} << EOF
 gsettings set org.gnome.desktop.wm.preferences button-layout "appmenu:minimize,maximize,close"

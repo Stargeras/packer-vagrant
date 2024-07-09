@@ -1,7 +1,7 @@
 #!/bin/bash
 
-enabledservices=$(echo ${ENABLEDSERVICES} | sed "s/__/ /g")
-
-for service in ${enabledservices}; do
+IFS="$FIELDSEPERATOR"
+for service in ${ENABLEDSERVICES}; do
   systemctl enable ${service}
 done
+unset IFS

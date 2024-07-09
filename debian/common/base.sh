@@ -1,7 +1,5 @@
 #!/bin/bash
 
-components=$(echo ${COMPONENTS} | sed "s/__/ /g")
-
 packages="xserver-xorg-core xdg-user-dirs sudo ssh vim curl bash-completion git gcc debootstrap arch-install-scripts \
 firmware-realtek firmware-misc-nonfree firmware-libertas firmware-iwlwifi firmware-linux open-vm-tools"
 
@@ -9,9 +7,11 @@ apt update
 apt upgrade -y
 apt install -y software-properties-common
 
-for component in ${components}; do
+IFS="$FIELDSEPERATOR"
+for component in ${COMPONENTS}; do
   apt-add-repository ${component}
 done
+unset IFS
 
 apt update
 apt install -y ${packages}
@@ -22,7 +22,10 @@ systemctl disable unattended-upgrades
 ln -sf /usr/share/zoneinfo/${TIMEZONE} /etc/localtime
 
 # OTHER CUSTOMIZATIONS
-cat >> /etc/bash.bashrc << EOF
+cp /etc/skel/.bashrc /root/
+bashrcfiles="/home/${username}/.bashrc /root/.bashrc"
+for file in $bashrcfiles; do
+  cat >> $file << EOF
 alias ls='ls --color=auto'
 alias ll='ls -l'
 alias ram='ps axch -o cmd:15,%mem --sort=-%mem | head'
@@ -31,7 +34,7 @@ alias cpu='ps axch -o cmd:15,%cpu --sort=-%cpu | head'
 alias ytdm='youtube-dl --extract-audio --audio-format mp3'
 alias ytdv='youtube-dl -f bestvideo+bestaudio'
 EOF
-cp /etc/skel/.bashrc /root/
+done
 
 useradd -m -g users -s /bin/bash -G wheel,storage,power ${username}
 usermod -aG sudo,netdev,disk ${username}

@@ -1,10 +1,10 @@
 #!/bin/bash
 
-extensions=$(echo ${VSCODEEXTENSIONS} | sed "s/__/ /g")
-
-for extension in ${extensions}; do
+IFS="$FIELDSEPERATOR"
+for extension in ${VSCODEEXTENSIONS}; do
   su ${username} -c "code --install-extension ${extension}"
 done
+unset IFS
 
 config_file="/home/${username}/.config/Code/User/settings.json"
 mkdir -p $(dirname ${config_file})
