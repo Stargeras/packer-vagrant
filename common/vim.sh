@@ -1,6 +1,5 @@
 #!/bin/bash
 
-vimextensions="$(echo ${VIMEXTENSIONS} | sed "s/__/ /g")"
 extensiondir="/home/${username}/.vim/pack/plugins/start"
 
 # VIM CUSTOMIZATIONS
@@ -35,8 +34,10 @@ chown ${username}:users ${file}
 cp ${file} /root/
 
 # VIM EXTENSTIONS
+IFS="$FIELDSEPERATOR"
 mkdir -p ${extensiondir}
-for extension in $vimextensions; do
+for extension in $VIMEXTENSIONS; do
   cd ${extensiondir}
   git clone ${extension}
 done
+unset IFS
